@@ -1,0 +1,51 @@
+<robot name="my_quadrotor">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="0.68"/>
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.003"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.2 0.2 0.05"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.2 0.2 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Rotor 0 -->
+  <link name="rotor_0"/>
+  <joint name="rotor_0_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rotor_0"/>
+    <origin xyz="0.15 0.15 0"/>
+  </joint>
+
+  <!-- Rotor 1 -->
+  <link name="rotor_1"/>
+  <joint name="rotor_1_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rotor_1"/>
+    <origin xyz="-0.15 -0.15 0"/>
+  </joint>
+
+  <!-- Rotor 2 -->
+  <link name="rotor_2"/>
+  <joint name="rotor_2_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rotor_2"/>
+    <origin xyz="0.15 -0.15 0"/>
+  </joint>
+
+  <!-- Rotor 3 -->
+  <link name="rotor_3"/>
+  <joint name="rotor_3_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rotor_3"/>
+    <origin xyz="-0.15 0.15 0"/>
+  </joint>
+</robot>

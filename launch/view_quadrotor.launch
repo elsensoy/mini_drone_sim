@@ -1,0 +1,8 @@
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro '$(find mini_drone_sim)/mini_drone_sim/drone/quadrotor_urdf/my_quadrotor.urdf'" />
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
+  
+  <node name="rviz" pkg="rviz" type="rviz" output="screen" />
+</launch>
+
